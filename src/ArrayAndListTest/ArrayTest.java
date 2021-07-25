@@ -1,5 +1,6 @@
 package ArrayAndListTest;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.*;
 
 
@@ -190,9 +191,10 @@ public class ArrayTest {
         //int o =  list.lastIndexOf(20);
         //System.out.println(o);
         System.out.println(list);
-        List<Integer> is = list.subList(2,6);
+        List<Integer> is = list.subList(2, 6);
         System.out.println(is);
-
+        Iterator<Integer> it = list.iterator();
+        it = (Iterator<java.lang.Integer>) list.spliterator();
     }
 }
 
