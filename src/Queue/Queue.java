@@ -127,6 +127,7 @@ public class Queue {
          * */
         return null; // it is bad  Возврашать ноль zero very very bad (I thing Ismailskom :) )
     }
+
     public boolean set(Integer data) {
         if (!this.isEmpty()) {
             this.addQueue(data);
@@ -160,8 +161,29 @@ public class Queue {
         v[0] = null;
         return v;
     }*/
+    public boolean addQueue(Queue data) {
+        if (!data.isEmpty()) {
+            Integer count = this.length + data.length;
+            Integer elem[] = new Integer[count + 2];
+            int i = 0;
+            int n = 0;
+            while (i < this.length) {
+                elem[i] = this.queue[i];
+                i++;
+            }
+            while (i < count) {
+                elem[i] = data.get(n + 1);
+                n++;
+                i++;
+            }
+            this.length = count;
+            this.capacity = count + 2;
+            this.queue = elem;
+            return true;
+        }
+        return false;
+    }
 }
-
 
 class qMain{
     public static void main(String[] args) {
@@ -190,7 +212,14 @@ class qMain{
 
         // Queue ff[] = queue.subQueue(3,6);
 
-
+        Queue queue1 = new Queue();
+        for (int j =0; j < 5; j++){
+            queue1.addQueue(j*2);
+        }
+        queue1.printQueue();
+        System.out.println("\n\n\n");
+        queue.addQueue(queue1);
+        queue.printQueue();
 
         queue.clearQ();
         queue.printQueue();
