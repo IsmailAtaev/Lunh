@@ -3,31 +3,36 @@ package Queue;
 
 
 
-public class Queue {
+public class Queue<E> {
     private int length;
     private int capacity = 10;
-    private Integer queue[];
+    private Queue<E> queue[];
 
     public Queue() {
-        this.queue = new Integer[capacity];
+        this.queue = new Queue[capacity];
     }
 
     public Queue(int capacity) {
         if (capacity > 0) {
             this.capacity = capacity;
-            this.queue = new Integer[this.capacity];
+           // this.queue = new Integer[this.capacity];
+            this.queue = new Queue[this.capacity];
         } else {
             if (capacity != 0) {
                 throw new IllegalArgumentException(" Capacity menshe 0 zero" + capacity);
             }
-            this.queue = new Integer[this.capacity];
+            //this.queue = new Integer[this.capacity];
+            this.queue = new Queue[this.capacity];
         }
     }
 
 
-    public boolean addQueue(Integer value) {
+    public boolean addQueue(E value) {
         if (this.capacity > 0 && this.length < this.capacity) {
-            this.queue[this.length] = value;
+
+
+            queue[this.length] = value;
+
             this.length++;
             return true;
         } else if (this.length == this.capacity) {
@@ -223,6 +228,16 @@ class qMain{
 
         queue.clearQ();
         queue.printQueue();
+
+    }
+}
+
+
+class DD<E>{
+    private DD elem[];
+
+    public DD(int capacity){
+        elem = new DD[capacity];
 
     }
 }
