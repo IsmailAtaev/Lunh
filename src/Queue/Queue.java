@@ -3,35 +3,40 @@ package Queue;
 
 
 
-public class Queue<E> {
+public class Queue {
     private int length;
     private int capacity = 10;
-    private Queue<E> queue[];
+    private Integer queue[];
+   // private Object qq[];
 
     public Queue() {
-        this.queue = new Queue[capacity];
+       // this.queue =  new Object[capacity];
+     //   this.qq = new E[capacity];
+        //this.queue = new E[capacity];
+        //this.queue = new E[capacity];
+
+
     }
 
     public Queue(int capacity) {
         if (capacity > 0) {
             this.capacity = capacity;
            // this.queue = new Integer[this.capacity];
-            this.queue = new Queue[this.capacity];
+            this.queue = new Integer [capacity];
         } else {
             if (capacity != 0) {
                 throw new IllegalArgumentException(" Capacity menshe 0 zero" + capacity);
             }
             //this.queue = new Integer[this.capacity];
-            this.queue = new Queue[this.capacity];
+            this.queue = new Integer[this.capacity];
         }
     }
 
 
-    public boolean addQueue(E value) {
+    public boolean addQueue(Integer value) {
         if (this.capacity > 0 && this.length < this.capacity) {
 
-
-            queue[this.length] = value;
+            this.queue[this.length] = value;
 
             this.length++;
             return true;
