@@ -1,7 +1,14 @@
 package Queue;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Objects;
+
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 public class Queue<T> {
     private Integer length = 0;
@@ -149,7 +156,7 @@ public class Queue<T> {
         if (!this.isEmpty()) {
             try {
                 if (to > this.getLength() || to < 0 || from > to || from < 0) {
-                    throw new IndexOutOfBoundsException("From to size big or small sorry it is erorr ");
+                    throw new IndexOutOfBoundsException("From to size big or small sorry it is error ");
                 }
                 Integer count = to - from;
                 Queue<T> qq = new Queue<T>(count--);
@@ -163,6 +170,7 @@ public class Queue<T> {
         }
         return null;
     }*/
+
     public boolean addQueue(Queue<T> data) {
        /* if (!data.isEmpty()) {
             Integer count = this.length + data.length;
@@ -281,5 +289,46 @@ class qMain {
 
         queue.clear();
         queue.print();
+    }
+}
+
+
+
+
+class Shifr{
+    public static void main(String[] args) {
+        String encryped  = "Pass_1";
+        MessageDigest messageDigest = null;
+        byte[] byteSencoded  = null;
+        try {
+            messageDigest = MessageDigest.getInstance("SHA-1");
+            messageDigest.update(encryped.getBytes(StandardCharsets.UTF_8));
+            byteSencoded = messageDigest.digest();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        BigInteger bigInteger = new BigInteger(1,byteSencoded);
+        String resHex =  bigInteger.toString(16);
+        System.out.println(resHex);
+
+    }
+}
+
+
+class MessageMain {
+    public static void main(String[] args) {
+        String encrypted = "Pass_1";
+        MessageDigest messageDigest = null;
+        byte[] bytesEncoded = null;
+        try {
+            messageDigest = MessageDigest.getInstance("SHA-1"); // only once !
+            messageDigest.update(encrypted.getBytes("utf8"));
+            bytesEncoded = messageDigest.digest();
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        BigInteger bigInt = new BigInteger(1, bytesEncoded); //1(sign+) or -1(sign-)
+        String resHex = bigInt.toString(16);
+        System.out.println(resHex);
     }
 }

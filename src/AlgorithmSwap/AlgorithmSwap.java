@@ -1,24 +1,24 @@
 package AlgorithmSwap;
 
 public class AlgorithmSwap {
+    private static int a;
+    private static String b;
+
     public static void main(String[] args) {
         int a = 50;
-        String b = new String("123ll");
-        swapFunction(a, b);
-
+        String b = new String("123");
+        System.out.println("a = " + a + " b = " + b);
+        a = swapFunction(a, b);
+        System.out.println("a = " + a + " b = " + b);
     }
 
-    public static void swapFunction(int a, String b) {
-        System.out.println("After a = " + a + "\nAfter b " + b);
-        //Integer temp = (Integer) a;
-        String ss = chekString(b);
-        System.out.println(ss);
-        b = String.valueOf(a);
-
-        a = Integer.parseInt(ss);
-        //b = temp.toString();
-
-        System.out.println("Befor a = " + a + "\nBefor b " + b);
+    public static int swapFunction(int a, String b) {
+        System.out.println("a = " + a + " b = " + b);
+        Integer temp = (Integer) a;
+        a = Integer.parseInt(b);
+        b = temp.toString();
+        System.out.println("a = " + a + " b = " + b);
+        return a;
     }
 
     public static String chekString(String str) {
