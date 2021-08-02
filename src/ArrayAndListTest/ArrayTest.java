@@ -1,97 +1,9 @@
 package ArrayAndListTest;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.*;
 
-
-class sortIsma {
-
-    public static void main(String[] args) {
-    /*        int a[][][] = {
-                {{1, 2, 3}, {11, 22, 33}, {111, 222, 333}},
-                {{4, 5, 6}, {44, 55, 66}, {444, 555, 666}},
-                {{7, 8, 9}, {77, 88, 99}, {777, 888, 999}}
-        };
-        a[0][0][0] = 1;
-        a[0][0][1] = 2;
-        a[0][0][2] = 3;
-
-        a[0][1][0] = 11;
-        a[0][1][1] = 22;
-        a[0][1][2] = 33;
-
-        a[0][2][0] = 111;
-        a[0][2][1] = 222;
-        a[0][2][2] = 333;
-
-                a[1][0][0] = 4;
-                a[1][0][1] = 5;
-                a[1][0][2] = 6;
-
-                a[1][1][0] = 44;
-                a[1][1][1] = 55;
-                a[1][1][2] = 66;
-
-                a[1][2][0] = 444;
-                a[1][2][1] = 555;
-                a[1][2][2] = 666;
-
-                                a[2][0][0] = 7;
-                                a[2][0][1] = 8;
-                                a[2][0][2] = 9;
-
-                                a[2][1][0] = 77;
-                                a[2][1][1] = 88;
-                                a[2][1][2] = 99;
-
-                                a[2][2][0] = 777;
-                                a[2][2][1] = 888;
-                                a[2][2][2] = 999;
-        for (int i = 0; i < a[i][i].length; i++) {
-            //System.out.println("i = " + i);
-            for (int j = i; j < a[j].length; j++) {
-              //  System.out.println("j = " + j);
-                for (int k = j; k < a.length; k++) {
-                //    System.out.println("k = " + k + "\n");
-                    System.out.print(a[i][j][k] + " \n");
-                }
-                System.out.println();
-            }
-            System.out.println(" p " + p);
-        }
-       for (int i[][]: a) {
-            for (int j[] : i) {
-                for (int k : j)
-                  System.out.print(k + " ");
-
-                System.out.println();
-            }
-            System.out.println();
-        }        System.out.println(a[0][0].length);
-      //  System.out.println(a[0][1].length);
-       // System.out.println(a[0][2].length);
-        */
-
-
-
-    }
-}
-
-
-class comparatorIsma implements Comparator<Integer>{
-    @Override
-    public int compare(Integer integer, Integer t1) {
-        if( integer > t1)
-            return 1;
-        else if( integer.equals(t1)){
-            return 0;
-        }
-        return -1;
-    }
-}
 public class ArrayTest {
     private static Object Integer;
-
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         /**1 return true or false boolean add(E e)
@@ -186,8 +98,6 @@ public class ArrayTest {
         //System.out.println(list.size());
         //int i =  list.indexOf(80);
         //System.out.println(i);
-
-
         //int o =  list.lastIndexOf(20);
         //System.out.println(o);
         System.out.println(list);
@@ -197,4 +107,3 @@ public class ArrayTest {
         it = (Iterator<java.lang.Integer>) list.spliterator();
     }
 }
-

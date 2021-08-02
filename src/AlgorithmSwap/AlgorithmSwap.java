@@ -1,9 +1,6 @@
 package AlgorithmSwap;
 
 public class AlgorithmSwap {
-    private static int a;
-    private static String b;
-
     public static void main(String[] args) {
         int a = 50;
         String b = new String("123");

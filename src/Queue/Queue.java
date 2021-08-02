@@ -1,14 +1,7 @@
 package Queue;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Objects;
-
-import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 
 public class Queue<T> {
     private Integer length = 0;
@@ -228,107 +221,5 @@ public class Queue<T> {
         int result = Objects.hash(length, capacity);
         result = 31 * result + Arrays.hashCode(queue);
         return result;
-    }
-}
-
-class qMain {
-    public static void main(String[] args) {
-        Queue<Integer> queue = new Queue<Integer>();
-
-        for (int i = 0; i < 12; i++) {
-            queue.add(i * 10);
-        }
-        queue.print();
-
-        System.out.print("\n");
-        System.out.println(" Queue isEmpty = " + queue.isEmpty());
-        System.out.println(" Queue Lenght = " + queue.getLength());
-        System.out.println(" Queue Capacity = " + queue.getCapacity());
-
-
-        queue.remove();
-        queue.print();
-        System.out.println("\n\n");
-
-        queue.remove();
-        queue.print();
-        System.out.println("\n\n");
-
-        queue.remove();
-        queue.print();
-        System.out.print("\n\n");
-
-        System.out.print(queue.get(10));
-        System.out.print("\n\n");
-
-        System.out.println(".get(index) =  " + queue.get(5));
-        System.out.println();
-
-        System.out.print("Has it queue object sent " + queue.contains(30) + "\n\n");
-        System.out.print("Has it queue object sent " + queue.contains(33) + "\n\n");
-        System.out.print("Method IndexObject(50)  = " + queue.indexObjet(50) + "\n\n");
-        System.out.print("Method IndexObject(55)  = " + queue.indexObjet(55) + "\n\n");
-
-        Queue queue1 = new Queue();
-        for (int j = 0; j < 5; j++) {
-            queue1.add(j * 2);
-        }
-
-        System.out.print("queue1.print() = ");
-        queue1.print();
-        System.out.print("\n\n");
-
-        System.out.print("queue1.print() = ");
-        queue.addQueue(queue1);
-        queue.print();
-        System.out.print("\n\n");
-
-       /* Queue<Integer> temp = queue.subQueue(3, 7);
-        System.out.println("subQueue = ");
-        temp.print();*/
-
-        queue.clear();
-        queue.print();
-    }
-}
-
-
-
-
-class Shifr{
-    public static void main(String[] args) {
-        String encryped  = "Pass_1";
-        MessageDigest messageDigest = null;
-        byte[] byteSencoded  = null;
-        try {
-            messageDigest = MessageDigest.getInstance("SHA-1");
-            messageDigest.update(encryped.getBytes(StandardCharsets.UTF_8));
-            byteSencoded = messageDigest.digest();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        BigInteger bigInteger = new BigInteger(1,byteSencoded);
-        String resHex =  bigInteger.toString(16);
-        System.out.println(resHex);
-
-    }
-}
-
-
-class MessageMain {
-    public static void main(String[] args) {
-        String encrypted = "Pass_1";
-        MessageDigest messageDigest = null;
-        byte[] bytesEncoded = null;
-        try {
-            messageDigest = MessageDigest.getInstance("SHA-1"); // only once !
-            messageDigest.update(encrypted.getBytes("utf8"));
-            bytesEncoded = messageDigest.digest();
-        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        BigInteger bigInt = new BigInteger(1, bytesEncoded); //1(sign+) or -1(sign-)
-        String resHex = bigInt.toString(16);
-        System.out.println(resHex);
     }
 }
