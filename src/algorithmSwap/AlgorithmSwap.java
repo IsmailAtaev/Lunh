@@ -1,4 +1,4 @@
-package AlgorithmSwap;
+package algorithmSwap;
 
 public class AlgorithmSwap {
     public static void main(String[] args) {

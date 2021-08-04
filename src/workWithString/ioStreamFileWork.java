@@ -1,11 +1,5 @@
-package WorkWithString;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
-import java.io.Serializable;
-import java.io.*;
+package workWithString;
 import java.util.Comparator;
-import java.util.Random;
-import java.util.Set;
-import java.util.TreeSet;
 
 
 abstract class GeometricObject {

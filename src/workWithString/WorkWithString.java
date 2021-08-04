@@ -1,4 +1,4 @@
-package WorkWithString;
+package workWithString;
 
 import java.io.UnsupportedEncodingException;
 import java.util.*;

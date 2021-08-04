@@ -1,4 +1,4 @@
-package Encryption;
+package encryption;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package ArrayAndListTest;
+package arrayAndListTest;
 
 import java.util.*;
 
