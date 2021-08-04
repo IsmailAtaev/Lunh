@@ -1,14 +1,14 @@
-package homeWork;
+package home.work;
 
 import java.util.Scanner;
 
 
-public class HomeWork1 {
+public class TaskOneFindSqrt {
     public static void main(String[] args) {
 
-        Double result = new Double(0.0);
-        Double korenResult = new Double(0.0);
-        Scanner in = new Scanner(System.in);
+        //Double result = new Double(0.0);
+        //Double korenResult = new Double(0.0);
+        /*Scanner in = new Scanner(System.in);
 
         System.out.print("enter a =\t");
         Double a = in.nextDouble();
@@ -17,9 +17,14 @@ public class HomeWork1 {
         Double b = in.nextDouble();
 
         System.out.print("enter c =\t");
-        Double c = in.nextDouble();
+        Double c = in.nextDouble();*/
+        MyInputStream in = new ModulInputStream();
+        SquareRoot squareRoot = new SquareRoot();
 
-        if (a != 0) {
+        squareRoot.squareRoot(in.myInputDouble("a"),in.myInputDouble("b"),in.myInputDouble("c"));
+        System.out.println(squareRoot.getArrayKoren());
+
+       /* if (a != 0) {
             result = Math.pow(b, 2) - 4 * (a * c);
              korenResult = Math.sqrt(result);
 
@@ -40,6 +45,6 @@ public class HomeWork1 {
                 Double two = (-b - korenResult) / (Math.pow(a, 2));
                 System.out.println("One koren = " + one + "\nTwo koren = " + two);
             }
-        }
+        }*/
     }
 }

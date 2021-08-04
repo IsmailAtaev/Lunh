@@ -1,6 +1,4 @@
-package homeWork;
-
-import java.sql.SQLOutput;
+package home.work;
 
 public class MyMathPow {
     public static Double getKorenPlus(Double b, Double resultKoren, Double a) {

@@ -1,8 +1,4 @@
-package homeWork;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+package home.work;
 
 public class HomeWork2 {
     public static void main(String[] args) {
