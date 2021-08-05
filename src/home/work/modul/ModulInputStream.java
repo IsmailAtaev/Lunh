@@ -1,4 +1,4 @@
- package home.work;
+ package home.work.modul;
 
 import java.util.Scanner;
 
@@ -14,8 +14,8 @@ public class ModulInputStream implements MyInputStream {
     }
 
     @Override
-    public Double myInputDouble(String str) {
+    public Integer myInputInt(String str) {
         System.out.print("Enter " + str + " =\t");
-        return in.nextDouble();
+        return in.nextInt();
     }
 }

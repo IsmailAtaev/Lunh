@@ -1,4 +1,4 @@
-package home.work;
+package home.work.task.one;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +21,10 @@ public class SquareRoot {
         return arrayKoren;
     }
 
-    public void squareRoot(double a, double b, double c) {
+    public void squareRoot(int a, int b, int c) {
         try {
             this.result = Math.sqrt(discriminant(a, b, c));
+
             if (result < 0) {
                 throw new IndexOutOfBoundsException("Value  < zero"); // logic exceptin ne nashol
             } else if (result == 0) {
@@ -32,6 +33,7 @@ public class SquareRoot {
                 this.arrayKoren.add(korenX1(a, b, result));
                 this.arrayKoren.add(korenX2(a, b, result));
             }
+
         } catch (NullPointerException e) {
             System.out.println(e);
         } catch (IndexOutOfBoundsException iex) {
